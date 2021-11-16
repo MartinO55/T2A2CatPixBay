@@ -26,11 +26,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <%= link_to "My Profile", myAccount_path, class: "nav-link" %> 
+                        <%= link_to "My Profile", profiles_path, class: "nav-link" %> 
                     </li>
 
                       <li class="nav-item">
-                        <%= link_to "Create A New Listing", createNewListing_path, class: "nav-link" %> 
+                        <%= link_to "Create A New Listing", new_picture_path, class: "nav-link" %> 
                     </li>
 
                 <% else %>
@@ -44,7 +44,7 @@
                     <% end %>
             
             <li class="nav-item"><%# this should go to the pics for sale%>
-                <%= link_to "Pictures", showAll_path, class:"nav-link" %>
+                <%= link_to "Pictures", pictures_path, class:"nav-link" %>
             </li>
         </ul>
 
