@@ -64,6 +64,6 @@ class PicturesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def picture_params
-      params.require(:picture).permit(:picture_title, :picture_url, :description, :non_fungible_token)
+      params.require(:picture).permit(:picture_title, :picture_url, :description, :non_fungible_token,:profile_id)
     end
 end
