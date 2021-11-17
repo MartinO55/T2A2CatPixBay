@@ -20,6 +20,12 @@
     <%= form.label :picture_url %>
     <%= form.text_field :picture_url %>
   </div>
+  
+  <%if @picture.image.attached?%>
+    <div>
+      <%= image_tag url_for(@pciture.image),width:'250px' %>
+    </div>
+  <%end%>
 
   <div class="field">
     <%= form.label :description %>
