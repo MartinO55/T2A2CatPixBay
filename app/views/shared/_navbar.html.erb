@@ -26,7 +26,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <%= link_to "My Profile", profiles_path, class: "nav-link" %> 
+                        <%= link_to "My Profile", profiles_path, class: "nav-link" %> <%#once the profile auto generates this should become singular%>
                     </li>
 
                       <li class="nav-item">
@@ -43,7 +43,7 @@
                     </li>
                     <% end %>
             
-            <li class="nav-item"><%# this should go to the pics for sale%>
+            <li class="nav-item"><%# this should go to the pics for sale, and should have a rescue for not logged in%>
                 <%= link_to "Pictures", pictures_path, class:"nav-link" %>
             </li>
         </ul>

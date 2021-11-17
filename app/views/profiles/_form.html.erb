@@ -12,18 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :belongs_to %>
-    <%= form.text_field :belongs_to %>
+    <%= form.label :user_id, value: current_user.id %> <%#needs to be the user ID auto taken %>
   </div>
 
   <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form.label :username, value: current_user.email %>
+
   </div>
 
   <div class="field">
-    <%= form.label :profile_id %>
-    <%= form.text_field :profile_id %>
+    <%= form.label :profile_id,  value: @profile %> <%# also needs to be auto filled and hidden%>
+
   </div>
 
   <div class="actions">
