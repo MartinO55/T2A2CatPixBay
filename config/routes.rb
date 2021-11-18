@@ -23,7 +23,8 @@ Rails.application.routes.draw do
     patch 'edit-pass', to: 'devise/passwords#update', as: :user_password
   #  post  'new-pass',  to: 'devise/passwords#create', as: :user_password
   end
-  
+
+
   root to: "main#index"
   get "about", to: "about#index"
 
