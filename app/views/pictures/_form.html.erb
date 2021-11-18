@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :picture_title %>
-    <%= form.text_field :picture_title %>
+  <div class="mb-3">
+    <% form.label :picture_title%>
+    <%= form.text_field :picture_title,  class:"form-control", placeholder: "Picture Title"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :picture_url %>
-    <%= form.text_field :picture_url %>
+  <div class="mb-3">
+    <% form.label :picture_url%>
+    <%= form.text_field :picture_url,  class:"form-control", placeholder: "Picture Url"  %>
   </div>
   
   <%if @picture.image.attached?%>
@@ -27,22 +27,22 @@
     </div>
   <%end%>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="mb-3">
+    <% form.label :description%>
+    <%= form.text_area :description,  class:"form-control", placeholder: "Description"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :non_fungible_token %>
-    <%= form.text_field :non_fungible_token %>
+  <div class="mb-3">
+    <% form.label :non_fungible_token%>
+    <%= form.text_field :non_fungible_token,  class:"form-control" , placeholder: "NFT" %>
   </div>
 
-    <div class="field">
+    <div class="mb-3">
     <%= form.number_field :profile_id,id: :picture_profile_id, value: current_user.id, type: :hidden %>
     </div>
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-secondary" %>
   </div>
 <% end %>

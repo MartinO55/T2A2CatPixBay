@@ -11,19 +11,19 @@
     </div>
   <% end %>
  
-  <div class="field">
-    <%= form.text_field :user_id, value: current_user.id %> <%#needs to be the user ID auto taken %>
+  <div class="mb-3">
+    <%= form.text_field :user_id, value: current_user.id,  class:"form-control", placeholder: "user_id" %> <%#needs to be the user ID auto taken %>
   </div>
  
-  <div class="field">
-    <%= form.text_field :username, value: :current_user %>
-  </div>
+  <div class=="mb-3">
+    <%= form.text_field :username, value: :current_user,  class:"form-control", placeholder: "username" %>
+  </div><br>
 
-  <%# <div class="field">
+  <%# <div class="mb-3">
  <%#   <%= form.label :profile_id,  value: @profile %> <%# also needs to be auto filled and hidden%>
  <%# </div> %>
 
   <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit class:"btn btn-secondary" %>
+  </div><br>
 <% end %>
