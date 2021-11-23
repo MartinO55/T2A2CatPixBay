@@ -38,7 +38,9 @@ class ProfilesController < ApplicationController
   def create
  
     @profile = Profile.new(permitted_params)
-    if @profile.nil?
+    
+    
+    if Profile.where(:user_id =>current_user.id).blank?
       respond_to do |format|
         if @profile.save
           format.html { redirect_to @profile, notice: "Profile was successfully created." }
@@ -48,9 +50,10 @@ class ProfilesController < ApplicationController
           format.json { render json: @profile.errors, status: :unprocessable_entity }
         end
       end
+
     else
       respond_to do |format|
-      format.html { redirect_to profiles_url, notice:"You cannot have two profiles"}
+      format.html { redirect_to profiles_url, notice:"NO! You cannot have two profiles. BAD KITTY!"}
       end
     end
 
@@ -58,7 +61,6 @@ class ProfilesController < ApplicationController
 
   # PATCH/PUT /profiles/1 or /profiles/1.json
   def update
-  
 
     respond_to do |format|
       if @profile.update(permitted_params)

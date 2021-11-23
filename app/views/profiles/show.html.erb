@@ -5,10 +5,6 @@
   <%= @profile.username %>
 </p>
 
-<p>
-  <strong>Profile:</strong><%# needs to Hide, %>
-  <%= current_user.id %>
-</p>
 
 <p>
 <% if policy(@profile).edit?%>

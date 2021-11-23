@@ -7,5 +7,10 @@ class ProfilePolicy < ApplicationPolicy
 
     def update?
         edit?
-      end
+    end
+
+    def destroy?
+        edit?
+    end
+      
   end
