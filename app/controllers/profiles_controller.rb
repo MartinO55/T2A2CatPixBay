@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1 or /profiles/1.json
   def show
-  
+   
   end
 
   # GET /profiles/new
@@ -36,23 +36,29 @@ class ProfilesController < ApplicationController
 
   # POST /profiles or /profiles.json
   def create
+ 
     @profile = Profile.new(permitted_params)
-    
-
-    respond_to do |format|
-      if @profile.save
-        format.html { redirect_to @profile, notice: "Profile was successfully created." }
-        format.json { render :show, status: :created, location: @profile }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
+    if @profile.nil?
+      respond_to do |format|
+        if @profile.save
+          format.html { redirect_to @profile, notice: "Profile was successfully created." }
+          format.json { render :show, status: :created, location: @profile }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @profile.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+      format.html { redirect_to profiles_url, notice:"You cannot have two profiles"}
       end
     end
+
   end
 
   # PATCH/PUT /profiles/1 or /profiles/1.json
   def update
-    authorize @profile
+  
 
     respond_to do |format|
       if @profile.update(permitted_params)
@@ -85,4 +91,6 @@ class ProfilesController < ApplicationController
     def permitted_params
       params.required(:profile).permit(:user_id, :username, :wallet)
     end
+
+
 end

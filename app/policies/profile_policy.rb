@@ -12,4 +12,5 @@ class ProfilePolicy < ApplicationPolicy
     def destroy?
         edit?
     end
+
   end
