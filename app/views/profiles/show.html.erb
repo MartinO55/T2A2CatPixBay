@@ -6,9 +6,11 @@
 </p>
 
 <p>
-  <strong>Profile:</strong>
-  <%= @profile.profile_id %>
+  <strong>Profile:</strong><%# needs to Hide, %>
+  <%= current_user.id %>
 </p>
 
+
+<%= link_to 'My Pictures', my_pictures_path(@profile), class:"btn btn-secondary" %>
 <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-secondary" %>
 <%= link_to 'Back', profiles_path, class:"btn btn-dark" %>

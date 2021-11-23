@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     # sessions
     get    'login',  to: 'devise/sessions#new',     as: :new_user_session
     post   'login',  to: 'devise/sessions#create',  as: :user_session
-    get 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session #for some unknown reason it was treating the delete path as a get path. I don't think its broke?
+    delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session #for some unknown reason it was treating the delete path as a get path. I don't think its broke?
     # registrations
     put    '/account',  to: 'devise/registrations#update'
     delete '/account',  to: 'devise/registrations#destroy'
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   #  post  'new-pass',  to: 'devise/passwords#create', as: :user_password
   end
     
-
+    get 'mypictures', to: 'profiles#mypictures', as: :my_pictures
 
   root to: "main#index"
   get "about", to: "about#index"

@@ -19,6 +19,12 @@ class ProfilesController < ApplicationController
   def edit
   end
 
+
+  def mypictures
+    @profile = current_user.id
+    @pictures = Picture.find(params) #This is where we define the filter?
+  end
+
   # POST /profiles or /profiles.json
   def create
     @profile = Profile.new(permitted_params)
