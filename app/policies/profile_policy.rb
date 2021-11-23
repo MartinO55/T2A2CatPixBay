@@ -3,11 +3,13 @@ class ProfilePolicy < ApplicationPolicy
         if user
             user.id ==record.user_id
         end
-
-
     end
 
     def update?
         edit?
-      end
+    end
+
+    def destroy?
+        edit?
+    end
   end

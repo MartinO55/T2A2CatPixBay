@@ -11,12 +11,15 @@
 </p>
 
 <p>
-  <strong>My Wallet:</strong>
-  <%= @profile.wallet %>
+<% if policy(@profile).edit?%>
+  
+    <strong>My Wallet:</strong>
+    <%= @profile.wallet %>
+  <%# Add button to add to wallet for baby version%>
+<% else %>
+  &nbsp
+<%end%>
 </p>
-
-
-
 <%= link_to 'My Pictures', my_pictures_path(@profile), class:"btn btn-secondary" %>
 <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-secondary" %>
 <%= link_to 'Back', profiles_path, class:"btn btn-dark" %>

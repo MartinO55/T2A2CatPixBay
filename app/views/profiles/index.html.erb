@@ -22,15 +22,15 @@
         <td><%= link_to 'Show', profile %></td>
         
         <% if policy(profile).edit?%>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <% else %>
-          &nbsp
-          <%end%>
-         <% if policy(profile).edit?%>
-        <td><%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td><%# doesn't work needs a route path%>
+          <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
           <% else %>
-          &nbsp
-          <%end%>
+            &nbsp
+        <%end%>
+        <% if policy(profile).destroy?%>
+          <td><%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+            &nbsp
+        <%end%>
       
       </tr>
     <% end %>
@@ -39,7 +39,6 @@
 
 <br>
 
-
-<%= link_to 'New Profile', new_profile_path, class:"btn btn-secondary"  %>
-
-<%= link_to 'Show', @profile , class:"btn btn-secondary" %>
+    <%= link_to 'Show', @profile , class:"btn btn-secondary" %>
+  
+    <%= link_to 'New Profile', new_profile_path, class:"btn btn-secondary"  %>

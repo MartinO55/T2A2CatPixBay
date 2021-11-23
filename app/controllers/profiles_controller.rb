@@ -10,10 +10,12 @@ class ProfilesController < ApplicationController
   # GET /profiles or /profiles.json
   def index
     @profiles = Profile.all
+   
   end
 
   # GET /profiles/1 or /profiles/1.json
   def show
+  
   end
 
   # GET /profiles/new
@@ -81,6 +83,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def permitted_params
-      params.required(:profile).permit(:user_id, :username)
+      params.required(:profile).permit(:user_id, :username, :wallet)
     end
 end

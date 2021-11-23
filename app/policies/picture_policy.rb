@@ -3,8 +3,6 @@ class ProfilePolicy < ApplicationPolicy
         if user
             user.id ==record.user_id
         end
-
-
     end
 
     def update?
