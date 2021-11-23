@@ -10,6 +10,12 @@
   <%= current_user.id %>
 </p>
 
+<p>
+  <strong>My Wallet:</strong>
+  <%= @profile.wallet %>
+</p>
+
+
 
 <%= link_to 'My Pictures', my_pictures_path(@profile), class:"btn btn-secondary" %>
 <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-secondary" %>

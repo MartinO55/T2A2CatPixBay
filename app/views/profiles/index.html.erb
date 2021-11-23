@@ -20,8 +20,18 @@
         <td><%= profile.user.id %></td>
         <td><%= profile.user.email %></td>
         <td><%= link_to 'Show', profile %></td>
+        
+        <% if policy(profile).edit?%>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <% else %>
+          &nbsp
+          <%end%>
+         <% if policy(profile).edit?%>
         <td><%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td><%# doesn't work needs a route path%>
+          <% else %>
+          &nbsp
+          <%end%>
+      
       </tr>
     <% end %>
   </tbody>

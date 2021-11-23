@@ -2,6 +2,11 @@ class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
 
+
+  rescue_from Pundit::NotAuthorizedError do |exception|
+    redirect_to root_url, alert: exception.message
+  end
+
   # GET /pictures or /pictures.json
   def index
     @pictures = Picture.all
@@ -18,6 +23,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1/edit
   def edit
+   
   end
 
   # POST /pictures or /pictures.json

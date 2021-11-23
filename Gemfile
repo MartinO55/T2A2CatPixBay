@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.2'
 gem "aws-sdk-s3", require: false
-
+gem 'pundit', '~> 2.1', '>= 2.1.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
