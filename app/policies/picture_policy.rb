@@ -5,7 +5,6 @@ class PicturePolicy < ApplicationPolicy
         end
     end
 
-
     def update?
         edit?
     end

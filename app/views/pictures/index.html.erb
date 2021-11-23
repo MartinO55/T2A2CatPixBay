@@ -25,8 +25,19 @@
          <td><%= picture.profile.user_id %></td>
         <td><%= picture.non_fungible_token + " test" %></td><%# that works too, just need to add a gem (not the best place but on a real marketplace this would just be dragged from the database)%>
         <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Delete', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td><%# the reason this doesn't work is we took out jquery in the application view cause it was breaking stuff%>
+
+        <% if policy(picture).edit?%>
+          <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+        <%else%>
+           &nbsp
+        <% end%>
+
+        <% if policy(picture).destroy?%>
+          <td><%= link_to 'Delete', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td><%# the reason this doesn't work is we took out jquery in the application view cause it was breaking stuff%>
+        <% else%>
+          &nbsp
+          <%end%>
+      
       </tr>
     <% end %>
   </tbody>
