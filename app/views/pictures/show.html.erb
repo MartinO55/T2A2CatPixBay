@@ -20,5 +20,11 @@
   <%= @picture.non_fungible_token %>
 </p>
 
+<p>
+  <strong>Owner</strong>
+  <%= @picture.profile_id %>
+</p>
+
+
 <%= link_to 'Edit', edit_picture_path(@picture), class:"btn btn-secondary"%>
 <%= link_to 'Back', pictures_path, class:"btn btn-dark"%>

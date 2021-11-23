@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(permitted_params)
     
     
-    if Profile.where(:user_id =>current_user.id).blank?
+    if Profile.where(:user_id =>current_user.id).blank? #thankyou anonymous stackoverflow user
       respond_to do |format|
         if @profile.save
           format.html { redirect_to @profile, notice: "Profile was successfully created." }
@@ -78,7 +78,7 @@ class ProfilesController < ApplicationController
     authorize @profile
     @profile.destroy
     respond_to do |format|
-      format.html { redirect_to profiles_url, notice: "Profile was successfully destroyed." }
+      format.html { redirect_to profiles_url, notice: "Profile was successfully deleted." }
       format.json { head :no_content }
     end
   end

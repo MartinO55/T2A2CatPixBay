@@ -23,7 +23,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1/edit
   def edit
-   
+    authorize @picture
   end
 
   # POST /pictures or /pictures.json
@@ -56,6 +56,7 @@ class PicturesController < ApplicationController
 
   # DELETE /pictures/1 or /pictures/1.json
   def destroy
+   
     @picture.destroy
     respond_to do |format|
       format.html { redirect_to pictures_url, notice: "Picture was successfully destroyed." }

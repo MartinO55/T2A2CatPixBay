@@ -21,11 +21,11 @@
     <%= form.text_field :picture_url,  class:"form-control", placeholder: "Picture Url"  %>
   </div>
   
-  <%#if @picture.image.attached?%>
+  <%if @picture.image.attached?%>
     <div>
-      <%#= image_tag url_for(@pciture.image),width:'250px' %>
+      <%= image_tag url_for(@picture.image),width:'250px' %>
     </div>
-  <%#end%>
+  <%end%>
 
   <div class="mb-3">
     <% form.label :description%>

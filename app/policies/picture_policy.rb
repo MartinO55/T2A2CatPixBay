@@ -1,9 +1,10 @@
-class ProfilePolicy < ApplicationPolicy
+class PicturePolicy < ApplicationPolicy
     def edit?
         if user
-            user.id ==record.user_id
+            user.id == picture.
         end
     end
+
 
     def update?
         edit?
