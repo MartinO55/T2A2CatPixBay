@@ -18,7 +18,7 @@
 
   <div class="mb-3">
     <% form.label :picture_url%>
-    <%= form.text_field :picture_url,  class:"form-control", placeholder: "Picture Url"  %>
+    <%= form.file_field :image,  class:"form-control", placeholder: "Picture Url"  %>
   </div>
   
   <%if @picture.image.attached?%>
