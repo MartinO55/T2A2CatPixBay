@@ -35,7 +35,29 @@ Susie is a relative newcomer to cryptocurrency who has been trading it since it 
 
 ### Sitemap
 
+Catpixbay Sitemap
+
+![CatPixBay Sitemap as of 24 November, showing main pages and where login or authorisation is required by pundit or devise](docs/Sitemap/T2A2_Sitemap.png)
+
+### Wireframes
+
+![CatPixBay landing page wireframe design](docs/Wireframes/Front_page.png)
+
+![CatPixBay About us wireframe design](docs/Wireframes/About_us.png)
+
+![CatPixBay marketplace page, where uses can buy and sell pictures of cats](docs/Wireframes/Marketplace.png)
+
+![CatPixBay my account page where users can edit their password details or delete their account](docs/Wireframes/My_account.png)
+
 ### Screenshots
+
+![CatPixBay Landing page screenshot](docs/Wireframes/Landing_page.png)
+
+![CatPixBay About Us page explainging the website](docs/Screenshots/About_us.png)
+
+![CatPixBay Edit User page screenshot where users can edit their password details or delete their account](docs/Screenshots/Edit_user.png)
+
+![CatPixBay marketplace page listing pictures for sale](docs/Screenshots/marketplace.png)
 
 ### Tech Stack
 
@@ -55,11 +77,13 @@ The Tech stack for this application is:
 
 ## ERD
 
+Entity Relationship diagram created with drawio:
+
+![CatPixBay Entity relationship diagram as of 24 november created with drawio, showing tables in database that used by the models and controllers; Users, Profiles, Pictures and Transactions](docs/ERD/T2A2_ERD.png)
+
 ## Third Party Services
 
 Currently, the only third party services used for are app is bootstrap, which provides the CSS styling for the website, AWS S3 which is used for image storage, and Heroku, which is used for hosting and deploying the website.
-
-## Database Schema
 
 ## Trello Board Screenshots
 
