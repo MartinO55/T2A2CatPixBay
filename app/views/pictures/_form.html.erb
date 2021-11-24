@@ -41,6 +41,16 @@
     <%= form.hidden_field :profile_id, id: :picture_profile_id, value: current_user.id %>
     </div>
 
+    <% if policy(@picture).edit?%>
+        <p>
+        <strong>For Sale</strong>
+        <%= check_box_tag(:for_sale) %>
+        <%= label_tag(:for_sale, "Put this picture up for sale")%>
+        </p>
+    <%else%>
+       &nbsp
+    <%end%>
+
 
   <div class="actions">
     <%= form.submit class:"btn btn-secondary" %>
