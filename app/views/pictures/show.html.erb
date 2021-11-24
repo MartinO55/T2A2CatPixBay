@@ -25,7 +25,13 @@
   <%= @picture.profile_id %>
 </p>
 
+<p>
+<strong>Price</strong>
+<%= @picture.price %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_picture_path(@picture), class:"btn btn-secondary"%>
+<%= link_to 'Buy', update_picture_path(@picture), class:"btn btn-secondary"%>
 <%= link_to 'Back', pictures_path, class:"btn btn-dark"%>

@@ -14,8 +14,15 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1 or /pictures/1.json
   def show
+    
   end
 
+  def buy
+    @profile = current_user.id
+    @picture = Picture.find(params[:id])
+    @picture.update(profile_id: @profile)
+  end
+  
   # GET /pictures/new
   def new
     @picture = Picture.new
@@ -59,7 +66,7 @@ class PicturesController < ApplicationController
    
     @picture.destroy
     respond_to do |format|
-      format.html { redirect_to pictures_url, notice: "Picture was successfully destroyed." }
+      format.html { redirect_to pictures_url, notice: "Picture was successfully deleted." }
       format.json { head :no_content }
     end
   end
@@ -72,6 +79,6 @@ class PicturesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def picture_params
-      params.require(:picture).permit(:picture_title, :picture_url, :image, :description, :non_fungible_token,:profile_id,:profile)
+      params.require(:picture).permit(:picture_title, :picture_url, :image, :description, :non_fungible_token,:profile_id,:profile, :price)
     end
 end

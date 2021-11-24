@@ -11,12 +11,25 @@
   
     <strong>My Wallet:</strong>
     <%= @profile.wallet %>
-  <%# Add button to add to wallet for baby version%>
+  <p>
+  This exists to add money to a wallet to check functionality in the market. A real marketplace wouldn't have this.
+  </p>
+  <%# This form just changes the specific amount in the wallet. if its not a number, it gets set to zero%>
+  <%= form_with(model: @profile) do |form| %>
+    <div class="mb-3">
+      <%= form.text_field :wallet,  class:"form-control", placeholder: "Add an amount to your wallet" %>
+    </div>
+    <br>
+   <div class="actions">
+    <%= form.submit class:"btn btn-secondary" %>
+  </div><br>
+
+    <%end%>
 <% else %>
   &nbsp
 <%end%>
 </p>
 
-<%= link_to 'My Pictures', my_pictures_path(@profile), class:"btn btn-secondary" %>
+<%#= link_to 'My Pictures', my_pictures_path(@profile), class:"btn btn-secondary" %>
 <%= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-secondary" %>
 <%= link_to 'Back', profiles_path, class:"btn btn-dark" %>

@@ -10,6 +10,7 @@
       <th>Description</th>
       <th>Non fungible token</th>
       <th>Owner username</th>
+      <th>Price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= picture.description %></td>
         <td><%= picture.non_fungible_token %></td>
         <td><%= picture.profile.username %></td> <%# SO THATS HOW ITS DONE%>
+        <td><%= picture.price %></td>
         <td><%= picture.non_fungible_token + " test" %></td><%# that works too, just need to add a gem (not the best place but on a real marketplace this would just be dragged from the database)%>
         <td><%= link_to 'Show', picture %></td>
 

@@ -24,7 +24,11 @@ Rails.application.routes.draw do
   #  post  'new-pass',  to: 'devise/passwords#create', as: :user_password
   end
     
+
     get 'mypictures', to: 'profiles#mypictures', as: :my_pictures
+
+    get '/pictures/buy/:id', to: 'pictures#buy', as: :update_picture
+    patch '/pictures/buy/:id', to: 'pictures#buy', as: :buy_picture
 
   root to: "main#index"
   get "about", to: "about#index"
