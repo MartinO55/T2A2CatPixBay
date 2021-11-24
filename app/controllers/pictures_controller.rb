@@ -16,10 +16,28 @@ class PicturesController < ApplicationController
   def show
     
   end
+  
+  def confirm
+
+  end
 
   def buy
+  #So this is utterly gross and insecure, BUT IT WORKS
     @profile = current_user.id
+    @buyerWallet = current_user.profile.wallet
+    
     @picture = Picture.find(params[:id])
+    @seller = @picture.profile
+
+    @sellerWallet = @picture.profile.wallet
+    @price = @picture.price
+    
+    @cost = @buyerWallet - @price
+    @profit = @sellerWallet + @price
+
+    current_user.profile.update(wallet: @cost)
+    @seller.update(wallet: @profit)
+
     @picture.update(profile_id: @profile)
   end
   

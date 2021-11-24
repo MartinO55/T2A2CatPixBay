@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
     get 'mypictures', to: 'profiles#mypictures', as: :my_pictures
 
+
+    get '/pictures/confirm/:id', to: 'pictures#confirm', as: :confirm_buy
     get '/pictures/buy/:id', to: 'pictures#buy', as: :update_picture
     patch '/pictures/buy/:id', to: 'pictures#buy', as: :buy_picture
 
