@@ -21,12 +21,12 @@
     <% @pictures.each do |picture| %>
       <tr>
         <td><%= picture.picture_title %></td>
-        <td><%= picture.picture_url %></td>
+        <td><%= picture.image %></td>
         <td><%= picture.description %></td>
         <td><%= picture.non_fungible_token %></td>
         <td><%= picture.profile.username %></td> <%# SO THATS HOW ITS DONE%>
         <td><%= picture.price %></td>
-        <td><%= picture.non_fungible_token + " test" %></td><%# that works too, just need to add a gem (not the best place but on a real marketplace this would just be dragged from the database)%>
+        <td><%#= picture.non_fungible_token + " test" %></td><%# that works too, just need to add a gem (not the best place but on a real marketplace this would just be dragged from the database)%>
         <td><%= link_to 'Show', picture %></td>
 
         <% if policy(picture).edit?%>
