@@ -79,7 +79,7 @@ The Tech stack for this application is:
 
 Entity Relationship diagram created with drawio:
 
-![CatPixBay Entity relationship diagram as of 24 november created with drawio, showing tables in database that used by the models and controllers; Users, Profiles, Pictures and Transactions](docs/ERD/T2A2_ERD.png)
+![CatPixBay Entity relationship diagram as of 24 november created with drawio, showing tables in database that used by the models and controllers; Users, Profiles, Pictures and Transactions](docs/ERD/T2A2_ERD_withActiveStorage.png)
 
 ## Third Party Services
 
