@@ -25,6 +25,7 @@ gem 'devise', '~> 4.2'
 gem "aws-sdk-s3", require: false
 gem 'pundit', '~> 2.1', '>= 2.1.1'
 gem "mini_magick"
+gem 'digest-sha3-patched-ruby-3', '~> 1.1', '>= 1.1.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
