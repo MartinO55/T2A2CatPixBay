@@ -59,6 +59,8 @@ Catpixbay Sitemap
 
 ![CatPixBay marketplace page listing pictures for sale](docs/Screenshots/marketplace.png)
 
+![CatPixBay marketplace page listing with a photo of a cat for sale. This is working with Amazon S3 on the local server, because for some unknown reason totally par for the course with this project heroku and AWS are on the outs](docs/Screenshots/marketplace_with_a_cat_photo.png)
+
 ### Tech Stack
 
 The Tech stack for this application is:

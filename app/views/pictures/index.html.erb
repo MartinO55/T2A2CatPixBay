@@ -21,7 +21,7 @@
     <% @pictures.each do |picture| %>
       <tr>
         <td><%= picture.picture_title %></td>
-        <td><%= image_tag(picture.image) %></td>
+        <td><%= image_tag(picture.image, :size => "250") %></td>
         <td><%= picture.description %></td>
         <td><%= picture.non_fungible_token %></td>
         <td><%= picture.profile.username %></td> <%# SO THATS HOW ITS DONE%>
