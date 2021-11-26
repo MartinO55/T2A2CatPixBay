@@ -32,13 +32,25 @@ class PicturesController < ApplicationController
     @sellerWallet = @picture.profile.wallet
     @price = @picture.price
     
-    @cost = @buyerWallet - @price
+  
+      if @buyerWallet =0 || @buyerWallet - @cost <0
+        redirect_to pictures_url, notice: "You don't have enough in your wallet to buy this picture" 
+        return
+      else
+        @cost = @buyerWallet - @price
+      end
+
+      if @buyerWallet =0 || @cost < 0
+        redirect_to pictures_url, notice: "You don't have enough in your wallet to buy this picture" 
+        return
+      end
     @profit = @sellerWallet + @price
 
     current_user.profile.update(wallet: @cost)
     @seller.update(wallet: @profit)
 
     @picture.update(profile_id: @profile)
+
   end
   
   # GET /pictures/new
