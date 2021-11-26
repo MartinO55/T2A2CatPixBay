@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_24_045604) do
+ActiveRecord::Schema.define(version: 2021_11_26_002413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_045604) do
   create_table "pictures", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.string "picture_title"
-    t.string "picture_url"#Obsolete now that image uploading has been added
+    t.string "picture_url"
     t.text "description"
     t.string "non_fungible_token"
     t.datetime "created_at", precision: 6, null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_045604) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "wallet"#should be encrypted, but I don't if this even continues to exist in a full version of the app
+    t.decimal "wallet"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
